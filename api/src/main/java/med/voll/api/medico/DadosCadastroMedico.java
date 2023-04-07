@@ -8,14 +8,14 @@ import jakarta.validation.constraints.Pattern;
 import med.voll.api.endereco.DadosEndereco;
 
 public record DadosCadastroMedico(
-		@NotBlank
+		@NotBlank(message = "Campo nome é obrigatório!")
 		String nome, 
-		@NotBlank
+		@NotBlank(message = "Campo email é obrigatório!")
 		@Email
 		String email, 
-		@NotBlank
+		@NotBlank(message = "Campo telefone é obrigatório!")
 		String telefone,
-		@NotBlank
+		@NotBlank(message = "Campo crm é obrigatório!")
 		@Pattern(regexp = "\\d{4,6}")
 		String crm, 
 		@NotNull
